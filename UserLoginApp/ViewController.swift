@@ -18,6 +18,17 @@ class ViewController: UIViewController {
         loginButton.layer.cornerRadius = 8
     }
 
-
+    @IBAction func LogInPressed(_ sender: Any) {
+        guard arrayLogins.contains(userName.text),
+              arrayPassword.contains(password.text)
+            
+        else {
+            let alert = UIAlertController(title: "Внимание!", message: "Введите верное имя пользователя или пароль", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okButton)
+            present(alert, animated: true, completion: nil)
+            return
+        }
+    }
 }
 
