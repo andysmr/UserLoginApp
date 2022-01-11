@@ -21,15 +21,15 @@ class ViewController: UIViewController {
 
     @IBAction func LogInPressed(_ sender: Any) {
         guard arrayLogins.contains(userName.text),
-              arrayPassword.contains(password.text)
-            
-        else {
-            let alert = UIAlertController(title: "Внимание!", message: "Введите верное имя пользователя или пароль", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okButton)
-            present(alert, animated: true, completion: nil)
-            return
-        }
+              dictionaryPassword[userName.text] == password.text
+            else {
+                let alert = UIAlertController(title: "Внимание!", message: "Введите верное имя пользователя или пароль", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okButton)
+                present(alert, animated: true, completion: nil)
+                return
+            }
+        
     }
 }
 
