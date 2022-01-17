@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func LogInPressed(_ sender: Any) {
-        guard arrayLogins.contains(userName.text),
+        guard arrLog.contains(userName.text),
               dictionaryPassword[userName.text] == password.text
             else {
                 let alert = UIAlertController(title: "Внимание!", message: "Введите верное имя пользователя или пароль", preferredStyle: .alert)
